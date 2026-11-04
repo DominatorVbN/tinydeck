@@ -3,51 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>TinyDeck Support</title>
+<title>Support · TinyDeck</title>
+<meta name="description" content="Get help with TinyDeck.">
 <link rel="icon" href="assets/favicon-64.png">
-<style>
-  :root { color-scheme: light dark; }
-  body { margin: 0; font: 17px/1.6 -apple-system, BlinkMacSystemFont, system-ui, sans-serif; background: Canvas; color: CanvasText; }
-  main { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
-  h1 { font-size: 34px; letter-spacing: -0.01em; }
-  h2 { font-size: 21px; margin-top: 34px; }
-  details { border: 1px solid color-mix(in srgb, CanvasText 15%, transparent); border-radius: 12px; padding: 12px 16px; margin: 10px 0; }
-  summary { font-weight: 600; cursor: pointer; }
-  a { color: #0A84FF; }
-  .btns a { display: inline-block; margin: 6px 10px 6px 0; padding: 10px 16px; border-radius: 999px; border: 1px solid #0A84FF; text-decoration: none; }
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<main>
-  <p><a href="./">← TinyDeck</a></p>
-  <h1>Support</h1>
-  <p>Need a hand? Start with the guides, then open an issue. Issues on GitHub are the fastest way to get help, and they help other people with the same pad.</p>
-  <div class="btns">
-    <a href="docs/getting-started.html">Getting started</a>
-    <a href="docs/troubleshooting.html">Troubleshooting</a>
-    <a href="https://github.com/DominatorVbN/tinydeck/issues/new/choose">Open an issue</a>
-  </div>
+<header class="topbar"><div class="in">
+  <a class="brand" href="./"><img src="assets/favicon-64.png" alt=""> TinyDeck</a>
+  <nav><a href="docs/getting-started.html">Guide</a><a href="compatibility.html">Compatible pads</a><a href="support.html">Support</a></nav>
+</div></header>
+<main class="page">
 
-  <h2>Frequently asked questions</h2>
-  <details><summary>Does TinyDeck need to keep running?</summary>
-    <p>No. Click Upload and the pad stores your setup itself. It works on any Mac or PC afterwards, even without TinyDeck installed.</p></details>
-  <details><summary>My pad isn't detected.</summary>
-    <p>Many pads ship with a charge-only USB cable. Try a cable you know carries data, and plug the pad straight into your Mac rather than through a hub. If your pad has a USB/Bluetooth switch, set it to USB. See <a href="docs/troubleshooting.html">Troubleshooting</a>.</p></details>
-  <details><summary>Is my pad supported?</summary>
-    <p>TinyDeck supports the CH57x family used by most “mini keyboard” macro pads. Check the <a href="compatibility.html">compatibility list</a>, or plug it in. TinyDeck tells you what it found.</p></details>
-  <details><summary>Can a key mute and unmute?</summary>
-    <p>Yes. Mute / Unmute and Play / Pause are toggle keys: press once to mute, again to unmute. In the knob editor, choose the Volume or Media preset.</p></details>
-  <details><summary>Why can't I pick colours for my pad's lights?</summary>
-    <p>Some pads (USB ID 1189:8890) only accept an effect number, with no colour setting. Larger pads in the family have full colour and per-layer lighting.</p></details>
-  <details><summary>I don't have a pad yet. Can I try it?</summary>
-    <p>Yes. Choose Help ▸ Try Demo Pad. Everything works, but nothing is sent to hardware.</p></details>
-  <details><summary>Can I use my ch57x-keyboard-tool YAML files?</summary>
-    <p>Yes. File ▸ Import Mapping reads them, and File ▸ Export Mapping writes files the command-line tool accepts.</p></details>
+<h1>Support</h1>
+<p class="lede">Start with the guides, then open an issue. Issues on GitHub are the fastest way to get help, and they help other people with the same pad.</p>
+<div class="btns"><a class="btn primary" href="docs/getting-started.html">Getting started</a><a class="btn ghost" href="docs/troubleshooting.html">Troubleshooting</a><a class="btn ghost" href="https://github.com/DominatorVbN/tinydeck/issues/new/choose">Open an issue</a></div>
+<h2>Frequently asked questions</h2><details class="faq"><summary>Does TinyDeck need to keep running?</summary><p>No. Click Upload and the pad stores your setup itself. It works on any Mac or PC afterwards, even without TinyDeck installed.</p></details><details class="faq"><summary>My pad isn't detected.</summary><p>Many pads ship with a charge-only USB cable. Try a cable you know carries data, and plug straight into your Mac. If your pad has a USB/Bluetooth switch, set it to USB. See <a href="docs/troubleshooting.html">Troubleshooting</a>.</p></details><details class="faq"><summary>Is my pad supported?</summary><p>TinyDeck supports the CH57x family used by most “mini keyboard” macro pads. Check the <a href="compatibility.html">compatibility list</a>, or plug it in. TinyDeck tells you what it found.</p></details><details class="faq"><summary>Can a key mute and unmute?</summary><p>Yes. Mute / Unmute and Play / Pause are toggles. In the knob editor, choose the Volume or Media preset.</p></details><details class="faq"><summary>Why can't I pick colours for my pad's lights?</summary><p>Some pads (USB ID 1189:8890) only accept an effect number. Larger pads in the family have full colour and per-layer lighting.</p></details><details class="faq"><summary>I don't have a pad yet. Can I try it?</summary><p>Yes. Choose Help ▸ Try Demo Pad. Everything works, but nothing is sent to hardware.</p></details><details class="faq"><summary>Can I use my ch57x-keyboard-tool YAML files?</summary><p>Yes. File ▸ Import Mapping reads them, and File ▸ Export Mapping writes files the command-line tool accepts.</p></details>
+<h2>Help other pad owners</h2><p>Whether your pad works or not, choose <strong>Help ▸ Report My Pad</strong> in TinyDeck. It fills in your pad's details for you.</p>
 
-  <h2>Help other pad owners</h2>
-  <p>If your pad works, or doesn't, choose <strong>Help ▸ Report My Pad</strong> in TinyDeck. It fills in your pad's details for you, and every report improves support for that model.</p>
-
-  <p><a href="privacy.html">Privacy Policy</a></p>
 </main>
+<footer class="site"><div class="in">
+  <div><a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="presskit/">Press kit</a> · <a href="https://github.com/DominatorVbN/tinydeck/issues/new/choose">Report a pad</a></div>
+  <div>© 2026 TinyDeck</div>
+</div></footer>
 </body>
 </html>

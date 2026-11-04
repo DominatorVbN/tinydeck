@@ -3,153 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>TinyDeck — Program your mini macro pad on Mac</title>
-<meta name="description" content="TinyDeck is a native Mac app for cheap USB macro pads and mini keyboards with knobs. Program every key and knob in a 3D editor. No Windows needed.">
+<title>Program your mini macro pad on Mac · TinyDeck</title>
+<meta name="description" content="TinyDeck is a native Mac app for USB macro pads and mini keyboards with knobs. No Windows needed.">
 <link rel="icon" href="assets/favicon-64.png">
-<meta property="og:title" content="TinyDeck — Program your mini macro pad on Mac">
-<meta property="og:description" content="Every key and knob, exactly how you want it. No Windows needed.">
-<meta property="og:image" content="presskit/TinyDeck-icon-Default-1024.png">
-<style>
-  :root {
-    --indigo: #615CF2; --blue: #0A84FF; --orange: #FF9F0A;
-    --ink: #0B0B12; --text: #F5F6FA; --muted: #A9ADBF; --card: rgba(255,255,255,0.06);
-    --line: rgba(255,255,255,0.12);
-    color-scheme: dark;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--ink); color: var(--text);
-    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
-  }
-  a { color: #8FB8FF; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
-  header.hero {
-    position: relative; overflow: hidden; text-align: center;
-    padding-block: 72px 88px;
-    background:
-      radial-gradient(60% 55% at 30% 20%, rgba(97,92,242,0.55), transparent 70%),
-      radial-gradient(55% 50% at 75% 35%, rgba(10,132,255,0.45), transparent 70%),
-      var(--ink);
-  }
-  nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 56px; }
-  nav .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text); text-decoration: none; }
-  nav .brand img { width: 32px; height: 32px; }
-  nav .links a { color: var(--muted); text-decoration: none; margin-left: 22px; font-size: 15px; }
-  nav .links a:hover { color: var(--text); }
-  .hero img.icon { width: min(220px, 50vw); height: auto; filter: drop-shadow(0 30px 50px rgba(0,0,0,0.5)); }
-  h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.05; letter-spacing: -0.02em; margin: 28px 0 14px; }
-  .lede { font-size: clamp(18px, 2.4vw, 22px); color: #D5D8E6; max-width: 640px; margin: 0 auto 30px; }
-  .cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 999px;
-    font-weight: 600; text-decoration: none; font-size: 16px;
-  }
-  .btn.primary { background: #fff; color: #1a1a2e; }
-  .btn.ghost { border: 1px solid var(--line); color: var(--text); }
-  .note { color: var(--muted); font-size: 14px; margin-top: 14px; }
-  section { padding-block: 72px; }
-  h2 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.015em; margin: 0 0 10px; }
-  .sub { color: var(--muted); margin: 0 0 36px; max-width: 640px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
-  .card .glyph { font-size: 26px; }
-  .card h3 { margin: 10px 0 6px; font-size: 19px; }
-  .card p { margin: 0; color: var(--muted); font-size: 15px; }
-  .pain { text-align: center; background: linear-gradient(180deg, transparent, rgba(255,159,10,0.06), transparent); }
-  .pain blockquote { font-size: clamp(20px, 3vw, 28px); margin: 0 auto; max-width: 760px; color: #E6E8F2; }
-  .pain blockquote span { color: var(--orange); }
-  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
-  table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 15px; }
-  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); }
-  th { color: var(--muted); font-weight: 600; background: rgba(255,255,255,0.03); }
-  tr:last-child td { border-bottom: 0; }
-  .ok { color: #4CD964; } .beta { color: var(--orange); }
-  code { background: rgba(255,255,255,0.08); padding: 1px 6px; border-radius: 6px; font-size: 0.9em; }
-  footer { border-top: 1px solid var(--line); padding-block: 36px; color: var(--muted); font-size: 14px; }
-  footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
-  footer a { color: var(--muted); margin-right: 18px; }
-  @media (max-width: 560px) { nav .links a { margin-left: 14px; } }
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<header class="hero">
-  <div class="wrap">
-    <nav>
-      <a class="brand" href="./"><img src="assets/favicon-64.png" alt=""> TinyDeck</a>
-      <div class="links">
-        <a href="docs/getting-started.html">Guide</a>
-        <a href="compatibility.html">Compatible pads</a>
-        <a href="support.html">Support</a>
-      </div>
-    </nav>
-    <img class="icon" src="assets/icon-512.png" alt="TinyDeck app icon: a macro pad with three keys and a knob">
-    <h1>Your tiny macro pad,<br>finally at home on Mac.</h1>
-    <p class="lede">Program every key and knob of your USB mini keyboard in a beautiful 3D editor. Shortcuts, media keys, lighting and more. <strong>No Windows needed.</strong></p>
-    <div class="cta">
-      <a class="btn primary" href="#download"> Download on the Mac App Store</a>
-      <a class="btn ghost" href="docs/getting-started.html">How it works</a>
-    </div>
-    <p class="note">Free · macOS 15 or later · Apple silicon and Intel</p>
-  </div>
-</header>
+<header class="topbar"><div class="in">
+  <a class="brand" href="./"><img src="assets/favicon-64.png" alt=""> TinyDeck</a>
+  <nav><a href="docs/getting-started.html">Guide</a><a href="compatibility.html">Compatible pads</a><a href="support.html">Support</a></nav>
+</div></header>
+<main class="page wide">
 
-<section class="pain">
-  <div class="wrap">
-    <blockquote>“Mac users: set it up on Windows first.” <span>Not any more.</span></blockquote>
-  </div>
+<section class="hero">
+  <img src="assets/icon-512.png" alt="TinyDeck app icon" style="width:min(200px,46vw);filter:drop-shadow(0 30px 50px rgba(0,0,0,.5))">
+  <h1>Your tiny macro pad,<br>finally at home on Mac.</h1>
+  <p class="lede">Program every key and knob of your USB mini keyboard in a beautiful 3D editor. Shortcuts, media keys, lighting and more. <strong>No Windows needed.</strong></p>
+  <div class="btns"><a class="btn primary" href="#download"> Download on the Mac App Store</a><a class="btn ghost" href="docs/getting-started.html">How it works</a></div>
+  <p class="note">Free · macOS 15 or later · Apple silicon and Intel</p>
 </section>
+<div class="stage"><div class="pad3d cols-3 press spin" style="--s:1.0;"><div class="body"><span class="led"></span><div class="keys"><i class="k">⌘C</i><i class="k">⌘V</i><i class="k">⌘Z</i><i class="k">▶︎</i><i class="k">🔇</i><i class="k">⏭</i></div><div class="knob"></div></div></div><div class="caption">The 3D editor mirrors your real pad. Keys light up and the knob turns as you use it.</div></div>
+<p class="quote">“Mac users: set it up on Windows first.” <span>Not any more.</span></p>
+<h2>Everything your pad can do</h2>
+<div class="grid">
+  <div class="card"><div class="pad3d cols-3 flat" style="--s:0.5;"><div class="body"><span class="led"></span><div class="keys"><i class="k">⌘C</i><i class="k">⌘V</i><i class="k">⌘Z</i></div><div class="knob"></div></div></div><h3>Every key, your way</h3><p>Click a key, press a shortcut, done. Or pick media keys, mouse actions and sequences.</p></div>
+  <div class="card"><div class="pad3d cols-3 flat spin" style="--s:0.5;"><div class="body"><span class="led"></span><div class="keys"><i class="k"></i><i class="k"></i><i class="k"></i></div><div class="knob"></div></div></div><h3>Knob presets</h3><p>Volume, media, scroll, zoom, brightness or undo/redo in one click.</p></div>
+  <div class="card"><div class="pad3d cols-3 flat breathe glow" style="--s:0.5;--glow:#AF52DE;"><div class="body"><span class="led"></span><div class="keys"><i class="k"></i><i class="k"></i><i class="k"></i></div><div class="knob"></div></div></div><h3>Lighting</h3><p>Effects and colours with a live 3D preview, applied instantly.</p></div>
+  <div class="card"><div class="pad3d cols-3 flat press" style="--s:0.5;"><div class="body"><span class="led"></span><div class="keys"><i class="k"></i><i class="k"></i><i class="k"></i></div><div class="knob"></div></div></div><h3>Test Keys</h3><p>See exactly what your pad sends as you press and turn.</p></div>
+  <div class="card"><h3>🧭 Recognises your pad</h3><p>Detects the model and layout. Identify Pad counts keys, knobs and layers.</p></div>
+  <div class="card"><h3>🔒 Private by design</h3><p>No accounts, no tracking, no data collected. Sandboxed.</p></div>
+</div>
+<h2>Works with popular mini keyboards</h2>
+<p class="muted">The CH57x family behind most “mini keyboard” and “macro keypad” pads. <a href="compatibility.html">See the full list →</a></p>
+<section id="download" class="hero"><h2>Get TinyDeck</h2><p class="muted">Free on the Mac App Store. No pad yet? Try the Demo Pad from the Help menu.</p><div class="btns"><a class="btn primary" href="#">Coming soon to the Mac App Store</a></div></section>
 
-<section>
-  <div class="wrap">
-    <h2>Everything your pad can do</h2>
-    <p class="sub">TinyDeck writes your setup straight to the pad, so it works on any computer, with no app running in the background.</p>
-    <div class="grid">
-      <div class="card"><div class="glyph">⌨️</div><h3>Every key, your way</h3><p>Click a key, press a shortcut, done. Or pick media keys, mouse clicks, scrolling and key sequences.</p></div>
-      <div class="card"><div class="glyph">🎛️</div><h3>Knob presets</h3><p>Volume, media, scroll, zoom, brightness or undo/redo for turn left, press and turn right, in one click.</p></div>
-      <div class="card"><div class="glyph">✨</div><h3>Lighting</h3><p>Choose effects and colours with a live preview on the 3D pad, then apply them instantly.</p></div>
-      <div class="card"><div class="glyph">🔍</div><h3>Test Keys</h3><p>See exactly what your pad sends. The on-screen keys light up and the knob turns with the real one.</p></div>
-      <div class="card"><div class="glyph">🧭</div><h3>Recognises your pad</h3><p>Detects the model and layout automatically. Identify Pad counts its keys, knobs and layers for you.</p></div>
-      <div class="card"><div class="glyph">🔒</div><h3>Private by design</h3><p>No accounts, no tracking, no data collected. Sandboxed and built for the Mac App Store.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="compatible">
-  <div class="wrap">
-    <h2>Works with popular mini keyboards</h2>
-    <p class="sub">The CH57x family behind most “mini keyboard” and “macro keypad” pads with 3–15 keys and up to 4 knobs. <a href="compatibility.html">Full list and how to check yours →</a></p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>USB ID</th><th>Typical pad</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td><code>1189:8890</code></td><td>3–6 keys + knob</td><td class="ok">Supported</td></tr>
-          <tr><td><code>1189:8840</code> · <code>8842</code> · <code>8850</code> · <code>8851</code></td><td>3×4, 3×3, 3×2 + knobs, with layers and RGB</td><td class="ok">Supported</td></tr>
-          <tr><td><code>514c:8851</code></td><td>Same family, second vendor ID</td><td class="ok">Supported</td></tr>
-          <tr><td><code>514c:8850</code></td><td>4×4 keys</td><td class="beta">Experimental</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section id="download" style="text-align:center">
-  <div class="wrap">
-    <h2>Get TinyDeck</h2>
-    <p class="sub" style="margin-inline:auto">Free on the Mac App Store. No pad yet? Try the built-in Demo Pad from the Help menu.</p>
-    <a class="btn primary" href="#">Coming soon to the Mac App Store</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap row">
-    <div>
-      <a href="privacy.html">Privacy</a>
-      <a href="support.html">Support</a>
-      <a href="presskit/">Press kit</a>
-      <a href="https://github.com/DominatorVbN/tinydeck/issues/new/choose">Report a pad</a>
-    </div>
-    <div>© 2026 TinyDeck. Protocol based on <a href="https://github.com/kriomant/ch57x-keyboard-tool">ch57x-keyboard-tool</a> (MIT).</div>
-  </div>
-</footer>
+</main>
+<footer class="site"><div class="in">
+  <div><a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="presskit/">Press kit</a> · <a href="https://github.com/DominatorVbN/tinydeck/issues/new/choose">Report a pad</a></div>
+  <div>© 2026 TinyDeck</div>
+</div></footer>
 </body>
 </html>
