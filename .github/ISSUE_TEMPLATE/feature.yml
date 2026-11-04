@@ -1,0 +1,8 @@
+name: Feature request
+description: Suggest an idea for TinyDeck.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes: { label: What would you like TinyDeck to do?, description: What problem would it solve for you? }
+    validations: { required: true }

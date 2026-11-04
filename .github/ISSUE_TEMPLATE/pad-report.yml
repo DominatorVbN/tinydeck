@@ -1,0 +1,34 @@
+name: Pad report
+description: Tell us whether TinyDeck works with your pad. (Easiest from TinyDeck ▸ Help ▸ Report My Pad.)
+title: "[Pad report] "
+labels: ["pad-report"]
+body:
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options: ["Works", "Partly works", "Doesn't work"]
+    validations: { required: true }
+  - type: input
+    id: usb
+    attributes:
+      label: USB ID
+      description: Shown in TinyDeck's sidebar or Pad Info, e.g. 1189:8890
+      placeholder: "1189:8890"
+    validations: { required: true }
+  - type: input
+    id: layout
+    attributes:
+      label: Keys / knobs / layers
+      placeholder: "6 keys, 1 knob, 1 layer"
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you try, and what did the pad do?
+  - type: textarea
+    id: details
+    attributes:
+      label: Pad details from TinyDeck
+      description: Paste from Help ▸ Report My Pad ▸ Copy Details, if you didn't open this issue from the app.
+      render: text

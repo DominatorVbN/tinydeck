@@ -1,0 +1,17 @@
+name: Bug report
+description: Something in TinyDeck isn't working.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes: { label: What happened?, description: Steps to reproduce, and what you expected. }
+    validations: { required: true }
+  - type: input
+    id: version
+    attributes: { label: TinyDeck version, description: TinyDeck ▸ About TinyDeck, placeholder: "26.11.0" }
+  - type: input
+    id: macos
+    attributes: { label: macOS version, placeholder: "27.0" }
+  - type: input
+    id: pad
+    attributes: { label: Pad USB ID (if relevant), placeholder: "1189:8890" }
